@@ -1,0 +1,110 @@
+{
+ "run_id": "2026-11-13_final_full24_wide2_drop0.05_trval_s0_36d09c1",
+ "config_path": "configs/final/final_full24_wide2_drop0.05_trval_s0.yaml",
+ "config": {
+  "features": [
+   "host"
+  ],
+  "model": {
+   "augment": true,
+   "aux_weight": 1.0,
+   "batch_size": 4096,
+   "compile": "reduce-overhead",
+   "device": "auto",
+   "dropout": 0.05,
+   "eval_every_epochs": 24,
+   "horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "lr_schedule": {
+    "boundaries": [
+     1.5,
+     4.5,
+     7.5,
+     10.5,
+     15.0,
+     19.5
+    ],
+    "values": [
+     0.01,
+     0.0075,
+     0.005,
+     0.0025,
+     0.001,
+     0.0005,
+     0.00025
+    ]
+   },
+   "max_epochs": 24,
+   "max_hours": 3.0,
+   "opponent_pairs": "fixed",
+   "optimizer": {
+    "eps": 1e-07
+   },
+   "patience_epochs": null,
+   "precision": "bf16",
+   "tta": "flips",
+   "type": "host_net",
+   "width": 2.0
+  },
+  "name": "final_full24_wide2_drop0.05_trval_s0",
+  "predict": [
+   "kaggle"
+  ],
+  "preprocess": {
+   "fill_null": 0,
+   "scaler": "none"
+  },
+  "seed": 0
+ },
+ "git_sha": "36d09c1",
+ "dirty": false,
+ "trained_on": [
+  "train",
+  "val"
+ ],
+ "limit_games": null,
+ "seed": 0,
+ "n_train_games": 6629,
+ "n_train_rows": 19094611,
+ "inputs": 54,
+ "train_time_s": 1166.0,
+ "kaggle_mean_p": [
+  0.05602462589740753,
+  0.05584124103188515
+ ],
+ "fit_info": {
+  "precision": "bf16",
+  "best_step": 111864,
+  "best_epoch": 24.0,
+  "stopped_step": 111864,
+  "epochs": 24.0,
+  "stop_reason": "max_epochs",
+  "best_is_last_eval": true,
+  "steps_per_epoch": 4661,
+  "eval_every": 111864,
+  "n_params": 437226,
+  "device": "cuda",
+  "device_name": "NVIDIA A10G",
+  "compile": "reduce-overhead",
+  "train_time_per_epoch_s": 46.6,
+  "in_sample_final_eval": 0.18998795747756958
+ },
+ "kaggle_submission": {
+  "ref": 58319096,
+  "file": "submissions/final_full24_wide2_drop0.05_trval_3seeds.csv",
+  "members": "seeds 0-2, equal-weight probability mean",
+  "date": "2026-11-13",
+  "public_score": 0.18296,
+  "private_score": 0.1761
+ }
+}

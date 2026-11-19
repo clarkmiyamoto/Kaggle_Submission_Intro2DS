@@ -1,0 +1,54 @@
+features:
+- host
+model:
+  augment: true
+  aux_weight: 1.0
+  batch_size: 4096
+  compile: reduce-overhead
+  device: auto
+  dropout: 0.05
+  eval_every_epochs: 24
+  horizons:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  lr_schedule:
+    boundaries:
+    - 1.5
+    - 4.5
+    - 7.5
+    - 10.5
+    - 15.0
+    - 19.5
+    values:
+    - 0.01
+    - 0.0075
+    - 0.005
+    - 0.0025
+    - 0.001
+    - 0.0005
+    - 0.00025
+  max_epochs: 24
+  max_hours: 3.0
+  opponent_pairs: fixed
+  optimizer:
+    eps: 1.0e-07
+  patience_epochs: null
+  precision: bf16
+  tta: flips
+  type: host_net
+  width: 2.0
+name: final_full24_wide2_drop0.05_trval_s1
+predict:
+- kaggle
+preprocess:
+  fill_null: 0
+  scaler: none
+seed: 1

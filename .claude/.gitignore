@@ -1,0 +1,3 @@
+# Agent worktrees are separate checkouts of their own branches
+worktrees/
+settings.local.json
